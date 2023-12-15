@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package rina;
+
+option cc_generic_services = true;
+
+message ChatRequest {
+  uint64 sid = 1;
+  string msg = 2;
+}; // message ChatRequest
+
+message ChatResponse {
+  uint64 sid = 1;
+  string msg = 2;
+}; // message ChatResponse
+
+service Chat {
+  rpc chat(ChatRequest) returns(ChatResponse);
+}; // service Chat
+
+service Knowledge {
+
+}; // service Knowledge

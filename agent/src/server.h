@@ -16,6 +16,9 @@
 #ifndef RINA_SERVER_H
 #define RINA_SERVER_H
 
+#include "chat_service_impl.h"
+#include <brpc/server.h>
+
 namespace rina {
 
 class Server {
@@ -28,9 +31,13 @@ public:
 
   int destroy();
 
-  int start();
+  int start(int port);
 
   void wait_until_exit();
+
+private:
+  ChatServiceImpl* _chat_impl {nullptr};
+  ::brpc::Server* _rpc_server {nullptr};
 }; // class Server
 
 } // namespace rina

@@ -16,10 +16,18 @@
 #ifndef RINA_SESSION_H
 #define RINA_SESSION_H
 
+#include "channel.h"
+
 namespace rina {
 
 class Session {
+public:
+  Session() = default;
 
+  ~Session() = default;
+
+private:
+  
 }; // class Session
 
 } // namespace rina

@@ -16,9 +16,19 @@
 
 #include "server.h"
 
+#include <brpc/server.h>
+#include <spdlog/spdlog.h>
+
+#include "chat_service_impl.h"
+
 namespace rina {
 
 int Server::init() {
+  _chat_impl = new ChatServiceImpl();
+  _rpc_server = new ::brpc::Server();
+  if (_rpc_server->AddService(_chat_impl, brpc::SERVER_DOESNT_OWN_SERVICE) != 0) {
+    spdlog::error("failed to add service impl");
+  }
   return 0;
 }
 
@@ -26,11 +36,18 @@ int Server::destroy() {
   return 0;
 }
 
-int Server::start() {
-  return 0;
+int Server::start(int port) {
+  ::butil::EndPoint point = butil::EndPoint(butil::IP_ANY, port);
+  ::brpc::ServerOptions options;
+  options.idle_timeout_sec = 3000;
+  if (_rpc_server->Start(point, &options) != 0) {
+    spdlog::error("start server failed");
+  }
+  return 0; 
 }
 
 void Server::wait_until_exit() {
+  _rpc_server->RunUntilAskedToQuit();
   return;
 }
 

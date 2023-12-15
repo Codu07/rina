@@ -6,34 +6,26 @@
  **************************************************************************/
  
  /**
- * @file agent.cpp
+ * @file chat_service_impl.h
  * @author wangtao(wtzhuque@163.com)
- * @date 2023/11/13 14:55:45
+ * @date 2023/12/15 15:08:44
  * @version $Revision$ 
  * @brief 
  *  
  **/
+#ifndef RINA_CHAT_SERVICE_IMPL_H
+#define RINA_CHAT_SERVICE_IMPL_H
 
-#include "agent.h"
+#include "idl/rina.pb.h"
 
 namespace rina {
 
-int Agent::init() {
-  return 0;
-}
+class ChatServiceImpl : public Chat {
 
-int Agent::destroy() {
-  return 0;
-}
-
-int Agent::reload(const std::string& config) {
-  return 0;
-}
-
-int Agent::chat(Message* msg) {
-  return 0;
-}
+}; // class ChatServiceImpl
 
 } // namespace rina
+
+#endif  //RINA_CHAT_SERVICE_IMPL_H
 
 /* vim: set ts=4 sw=4 sts=4 tw=100 */

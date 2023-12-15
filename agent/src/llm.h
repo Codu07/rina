@@ -6,48 +6,38 @@
  **************************************************************************/
  
  /**
- * @file agent.h
+ * @file llm.h
  * @author wangtao(wtzhuque@163.com)
- * @date 2023/11/13 14:55:39
+ * @date 2023/11/20 19:24:52
  * @version $Revision$ 
  * @brief 
  *  
  **/
-#ifndef RINA_AGENT_H
-#define RINA_AGENT_H
+#ifndef RINA_LLM_H
+#define RINA_LLM_H
 
 #include <string>
 
-#include "message.h"
-#include "llm.h"
-
 namespace rina {
 
-class Agent {
+class LLM {
 public:
-  Agent() {}
+  LLM(const std::string& name) {}
 
-  virtual ~Agent() {}
+  virtual ~LLM() {}
 
-  virtual int init() = 0;
-
-  virtual int destroy() = 0;
-
-  virtual int reload(const std::string& desc);
-
-  virtual int chat(Message* msg);
-
-protected:
-  LLM* llm() {
-    return _llm;
+  virtual const std::string& name() const {
+    return _name;
   }
 
+  virtual int predict();
+
 private:
-  LLM* _llm {nullptr};
-}; // class Agent
+  std::string _name;
+}; // class LLM
 
 } // namespace rina
 
-#endif  //RINA_AGENT_H
+#endif  //RINA_LLM_H
 
 /* vim: set ts=4 sw=4 sts=4 tw=100 */

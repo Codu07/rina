@@ -6,31 +6,23 @@
  **************************************************************************/
  
  /**
- * @file agent.cpp
+ * @file channel.cpp
  * @author wangtao(wtzhuque@163.com)
- * @date 2023/11/13 14:55:45
+ * @date 2023/11/21 14:37:35
  * @version $Revision$ 
  * @brief 
  *  
  **/
 
-#include "agent.h"
+#include "channel.h"
 
 namespace rina {
-
-int Agent::init() {
+  
+int Channel::pub(Message* msg) {
   return 0;
 }
 
-int Agent::destroy() {
-  return 0;
-}
-
-int Agent::reload(const std::string& config) {
-  return 0;
-}
-
-int Agent::chat(Message* msg) {
+int Channel::sub(std::function<int(const Message&)> callback) {
   return 0;
 }
 

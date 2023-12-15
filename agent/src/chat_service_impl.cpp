@@ -6,34 +6,12 @@
  **************************************************************************/
  
  /**
- * @file agent.cpp
+ * @file chat_service_impl.cpp
  * @author wangtao(wtzhuque@163.com)
- * @date 2023/11/13 14:55:45
+ * @date 2023/12/15 15:08:51
  * @version $Revision$ 
  * @brief 
  *  
  **/
-
-#include "agent.h"
-
-namespace rina {
-
-int Agent::init() {
-  return 0;
-}
-
-int Agent::destroy() {
-  return 0;
-}
-
-int Agent::reload(const std::string& config) {
-  return 0;
-}
-
-int Agent::chat(Message* msg) {
-  return 0;
-}
-
-} // namespace rina
 
 /* vim: set ts=4 sw=4 sts=4 tw=100 */

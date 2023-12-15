@@ -6,34 +6,24 @@
  **************************************************************************/
  
  /**
- * @file agent.cpp
+ * @file tools.h
  * @author wangtao(wtzhuque@163.com)
- * @date 2023/11/13 14:55:45
+ * @date 2023/12/15 14:58:56
  * @version $Revision$ 
  * @brief 
  *  
  **/
-
-#include "agent.h"
+#ifndef RINA_TOOLS_H
+#define RINA_TOOLS_H
 
 namespace rina {
 
-int Agent::init() {
-  return 0;
-}
+class Tools {
 
-int Agent::destroy() {
-  return 0;
-}
-
-int Agent::reload(const std::string& config) {
-  return 0;
-}
-
-int Agent::chat(Message* msg) {
-  return 0;
-}
+}; // class Tools
 
 } // namespace rina
+
+#endif  //RINA_TOOLS_H
 
 /* vim: set ts=4 sw=4 sts=4 tw=100 */

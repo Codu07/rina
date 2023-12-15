@@ -15,11 +15,14 @@
  **/
 
 #include <cxxopts.hpp>
+#include <spdlog/spdlog.h>
 
 #include "server.h"
 #include "core_framework.h"
 
 namespace rina {
+
+const static int PORT = 8080;
 
 int run(int argc, char** argv) {
   int ret = 0;
@@ -27,6 +30,7 @@ int run(int argc, char** argv) {
   CoreFramework* core = CoreFramework::instance();
   ret = core->init();
   if (ret != 0) {
+    spdlog::error("init core framework failed");
     // Fatal
     return ret;
   }
@@ -34,13 +38,13 @@ int run(int argc, char** argv) {
   Server* server = new Server();
   ret = server->init();
   if (ret != 0) {
-    // Fatal
+    spdlog::error("init server failed");
     return ret;
   }
 
-  ret = server->start();
+  ret = server->start(PORT);
   if (ret != 0) {
-    // Fatal
+    spdlog::error("start server failed");
     return ret;
   }
 
