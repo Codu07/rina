@@ -21,6 +21,15 @@
 namespace rina {
 
 class ChatServiceImpl : public Chat {
+public:
+  ChatServiceImpl() {}
+
+  virtual ~ChatServiceImpl() {}
+
+  virtual void chat(::google::protobuf::RpcController* controller,
+                    const ::rina::ChatRequest* request,
+                    ::rina::ChatResponse* response,
+                    ::google::protobuf::Closure* done);
 
 }; // class ChatServiceImpl
 

@@ -14,4 +14,17 @@
  *  
  **/
 
+#include "chat_service_impl.h"
+
+namespace rina {
+
+void ChatServiceImpl::chat(::google::protobuf::RpcController* controller,
+                           const ::rina::ChatRequest* request,
+                           ::rina::ChatResponse* response,
+                           ::google::protobuf::Closure* done) {
+    return;
+}
+
+} // namespace rina
+
 /* vim: set ts=4 sw=4 sts=4 tw=100 */

@@ -33,6 +33,11 @@ int Server::init() {
 }
 
 int Server::destroy() {
+  delete _chat_impl;
+  _chat_impl = nullptr;
+
+  delete _rpc_server;
+  _rpc_server = nullptr;
   return 0;
 }
 

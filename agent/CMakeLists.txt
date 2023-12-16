@@ -72,7 +72,8 @@ include_directories(${OPENSSL_INCLUDE_DIR})
 
 include_directories(.)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CPP_FLAGS} -O2 -std=c++2a -D__const__= -pipe -W -Wall -Wno-unused-parameter -fPIC -fno-omit-frame-pointer")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CPP_FLAGS} -O2 -std=c++2a -D__const__= -pipe -W -Wall -Wno-unused-parameter -fPIC -fno-omit-frame-pointer")
+set(CMAKE_CXX_FLAGS "${CMAKE_CPP_FLAGS} -O2 -std=c++2a -pipe -W -Wall -Wno-unused-parameter -fPIC -fno-omit-frame-pointer")
 
 set(LIBS
     ${FMT_LIB}
